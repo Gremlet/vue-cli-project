@@ -16,7 +16,7 @@
         </b-row>
       </b-container>
     </div>
-    <div>
+    <div class="welcome-text">
       <p class="text-center">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum esse
         sapiente ut? Impedit similique consequuntur ea? Similique commodi ullam
