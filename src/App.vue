@@ -4,8 +4,8 @@
       <b-navbar-brand class="header">The Cocktail App</b-navbar-brand>
       <b-navbar-toggle target="navbar-toggle-collapse">
         <template #default="{ expanded }">
-          <b-icon v-if="expanded" icon="chevron-up"></b-icon>
-          <b-icon v-else icon="chevron-down"></b-icon>
+          <b-icon v-if="expanded" icon="x"></b-icon>
+          <b-icon v-else icon="list"></b-icon>
         </template>
       </b-navbar-toggle>
 

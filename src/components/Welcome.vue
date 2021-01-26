@@ -1,5 +1,5 @@
 <template>
-  <div class="welcome">
+  <div class="welcome-page">
     <h1 class="text-center">Welcome to the Cocktail App!</h1>
     <div class="image-grid">
       <b-container fluid class="p-4 bg-light">
@@ -16,6 +16,14 @@
         </b-row>
       </b-container>
     </div>
+    <div>
+      <p class="text-center">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum esse
+        sapiente ut? Impedit similique consequuntur ea? Similique commodi ullam
+        aliquid non consequuntur magni, laudantium deleniti architecto tenetur
+        odit, quae numquam?
+      </p>
+    </div>
   </div>
 </template>
 
@@ -30,8 +38,12 @@ export default {
 <style lang="scss">
 @import "@/main.scss";
 
-.welcome {
+h1 {
   font-family: $lobster;
+}
+
+p {
+  font-family: $roboto;
 }
 .image-grid {
   width: 50%;
