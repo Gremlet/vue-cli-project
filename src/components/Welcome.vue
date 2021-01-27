@@ -24,14 +24,19 @@
         odit, quae numquam?
       </p>
     </div>
+    <random></random>
   </div>
 </template>
 
 <style lang="scss"></style>
 
 <script>
+import Random from "@/components/Random.vue";
 export default {
-  name: "Welcome"
+  name: "Welcome",
+  components: {
+    Random
+  }
 };
 </script>
 
