@@ -2,11 +2,20 @@
   <div>
     <b-button variant="info" @click="onClick">Randomise!</b-button>
     <h1>{{ message }}</h1>
-    <ul>
-      <li v-for="drink in drinks" :key="drink.strDrink">
-        {{ drink.strDrink }}
-      </li>
-    </ul>
+    <b-container>
+      <b-row>
+        <b-col sm v-for="drink in drinks" :key="drink.strDrink">
+          <b-card
+            :title="drink.strDrink"
+            :img-src="drink.strDrinkThumb"
+            img-top
+            class="mb-5"
+          >
+            <!-- <b-card-text>{{ drink.strInstructions }}</b-card-text> -->
+          </b-card>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
