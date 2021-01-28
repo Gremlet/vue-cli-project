@@ -15,7 +15,7 @@
           </b-col>
         </b-row>
       </b-container>
-      <div class="welcome-text">
+      <div class="welcome-text mt-5">
         <p class="text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum esse
           sapiente ut? Impedit similique consequuntur ea? Similique commodi
@@ -28,8 +28,6 @@
     <random></random>
   </div>
 </template>
-
-<style lang="scss"></style>
 
 <script>
 import Random from "@/components/Random.vue";

@@ -1,7 +1,7 @@
 <template>
   <div class="cards-wrapper">
     <b-button variant="info" @click="onClick">Randomise!</b-button>
-    <h1>{{ message }}</h1>
+    <h1 class="mt-5">{{ toggleMessage }}</h1>
     <b-container>
       <b-row>
         <b-col sm v-for="drink in drinks" :key="drink.strDrink">
@@ -26,15 +26,27 @@ export default {
 
   data() {
     return {
-      message: null,
+      message: [],
       drinks: null
     };
+  },
+
+  computed: {
+    toggleMessage: function() {
+      return this.message[Math.floor(Math.random() * this.message.length)];
+    }
   },
 
   methods: {
     onClick() {
       console.log("Clicked!");
-      this.message = "Here are ten random cocktails";
+      this.message = [
+        "Here are ten random cocktails",
+        "Delicious! Ten cocktails for you",
+        "Yum! Ten refreshing cocktails!",
+        "Is it Friday yet? Ten drinks for you",
+        "Cheers! Ten random cocktails"
+      ];
       this.fetchDrink();
     },
     async fetchDrink() {
