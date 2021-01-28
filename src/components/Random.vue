@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="cards-wrapper">
     <b-button variant="info" @click="onClick">Randomise!</b-button>
     <h1>{{ message }}</h1>
     <b-container>
@@ -9,7 +9,7 @@
             :title="drink.strDrink"
             :img-src="drink.strDrinkThumb"
             img-top
-            class="mb-5"
+            class="mb-5 mt-5 mr-5"
           >
             <!-- <b-card-text>{{ drink.strInstructions }}</b-card-text> -->
           </b-card>
@@ -48,3 +48,14 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.card-title {
+  font-size: 1rem;
+}
+
+.cards-wrapper {
+  margin: auto;
+  text-align: center;
+}
+</style>

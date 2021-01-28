@@ -15,15 +15,16 @@
           </b-col>
         </b-row>
       </b-container>
+      <div class="welcome-text">
+        <p class="text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum esse
+          sapiente ut? Impedit similique consequuntur ea? Similique commodi
+          ullam aliquid non consequuntur magni, laudantium deleniti architecto
+          tenetur odit, quae numquam?
+        </p>
+      </div>
     </div>
-    <div class="welcome-text">
-      <p class="text-center">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum esse
-        sapiente ut? Impedit similique consequuntur ea? Similique commodi ullam
-        aliquid non consequuntur magni, laudantium deleniti architecto tenetur
-        odit, quae numquam?
-      </p>
-    </div>
+
     <random></random>
   </div>
 </template>
