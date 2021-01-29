@@ -8,26 +8,47 @@
       cocktail name, or look up some random cocktails on the
       <b-link to="/">home</b-link> page.
     </p>
+    <about-ings class="mb-5"></about-ings>
+
     <div class="search-form">
       <b-form inline @submit="onSubmit">
         <label for="input-cocktail-name">Search for a cocktail: </label>
         <b-form-input
           id="input-cocktail-name"
           v-model="searchTerm"
-          class="mx-2 w-75"
+          class="mx-2 w-50"
         ></b-form-input>
         <b-button type="submit" variant="info">Search</b-button>
       </b-form>
 
-      <!-- TODO make this a nice list with cards and such -->
-
-      <div class="mt-5" v-if="resultsFound > 0">
-        <h1>We found {{ resultsFound }} cocktails</h1>
-        <ul>
-          <li v-for="drink in drinks" :key="drink.strDrink">
-            {{ drink.strDrink }}
-          </li>
-        </ul>
+      <div class="mt-5">
+        <h1 v-if="resultsFound > 0">We found {{ resultsFound }} cocktails</h1>
+        <b-container>
+          <b-row>
+            <b-col
+              sm
+              v-for="drink in drinks.slice(0, this.show)"
+              :key="drink.strDrink"
+            >
+              <b-card
+                :title="drink.strDrink"
+                :img-src="drink.strDrinkThumb"
+                img-top
+                class="mb-2 mt-2 mr-5"
+              >
+                <!-- <b-card-text>{{ drink.strInstructions }}</b-card-text> -->
+              </b-card>
+            </b-col>
+          </b-row>
+          <b-button
+            class="mb-5 mt-5"
+            variant="info"
+            d-block
+            v-if="resultsFound > 10"
+            @click="showMore"
+            >Show more</b-button
+          >
+        </b-container>
       </div>
     </div>
   </div>
@@ -35,18 +56,22 @@
 
 <script>
 import axios from "axios";
+import AboutIngs from "@/components/AboutIngs.vue";
+
 export default {
+  components: { AboutIngs },
   name: "Drinks",
 
   data() {
     return {
       searchTerm: null,
-      drinks: []
+      drinks: [],
+      show: 10
     };
   },
 
   computed: {
-    resultsFound: function() {
+    resultsFound() {
       return this.drinks.length;
     }
   },
@@ -54,12 +79,18 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      axios
-        .get(
-          `https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=${this.searchTerm}`
-        )
-        .then(result => (this.drinks = result.data.drinks));
-      //maybe do some error handling here
+      this.fetchDrink();
+    },
+    async fetchDrink() {
+      let result = await axios.get(
+        `https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=${this.searchTerm}`
+      );
+      let data = result.data.drinks;
+      console.log(data);
+      this.drinks = data;
+    },
+    showMore() {
+      this.show = this.show + 10;
     }
   }
 };

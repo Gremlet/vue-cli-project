@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Drinks from "../views/Drinks.vue";
+import Ingredients from "../views/Ingredients.vue";
 
 Vue.use(VueRouter);
 
@@ -14,7 +16,12 @@ const routes = [
     path: "/drinks",
     name: "Drinks",
 
-    component: () => import("../views/Drinks.vue")
+    component: Drinks
+  },
+  {
+    path: "/ingredients/:ingredient",
+    name: "Ingredients",
+    component: Ingredients
   }
 ];
 

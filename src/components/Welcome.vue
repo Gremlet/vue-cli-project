@@ -1,6 +1,7 @@
 <template>
   <div class="welcome-page">
     <h1 class="text-center">Welcome to the Cocktail App!</h1>
+    <!-- Welcome, name maybe? -->
     <div class="image-grid">
       <b-container fluid class="p-4 bg-light">
         <b-row>
@@ -16,6 +17,7 @@
         </b-row>
       </b-container>
       <div class="welcome-text mt-5">
+        <!-- personalise? I don't fucking know -->
         <p class="text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum esse
           sapiente ut? Impedit similique consequuntur ea? Similique commodi

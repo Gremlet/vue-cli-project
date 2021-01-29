@@ -1,6 +1,7 @@
 <template>
   <div class="home mt-5">
     <welcome></welcome>
+    <!-- Let's get to know each other v-model prop to Welcome and Random? -->
   </div>
 </template>
 
