@@ -1,23 +1,30 @@
 <template>
-  <div class="drink-desc">
+  <div class="drink-desc w-75 ml-auto mr-auto text-left">
     <b-button variant="warning" to="/drinks" class="mt-3">
       <b-icon icon="arrow-left"></b-icon> Go back</b-button
     >
     <h1 class="text-center text-capitalize mt-5">
       {{ $route.params.ingredient }}
     </h1>
-    <p v-if="!readMoreActivated" class="w-75 ml-auto mr-auto">
-      {{ drinkIngredient.slice(0, 500) }}
+    <p v-if="!readMoreActivated && drinkIngredient.length>0">
+      {{ drinkIngredient.slice(0, 500) }} ...
     </p>
     <b-button
+      class="float-right"
       variant="info"
-      v-if="!readMoreActivated"
+      v-if="!readMoreActivated && drinkIngredient.length > 0"
       @click="activateReadMore"
     >
       Read more...
     </b-button>
-    <p class="w-75 ml-auto mr-auto" v-if="readMoreActivated">
+    <p v-if="readMoreActivated">
       {{ drinkIngredient }}
+    </p>
+    <p
+      class="text-center w-75 ml-auto mr-auto"
+      v-if="drinkIngredient.length < 1"
+    >
+      <b-icon icon="emoji-neutral"></b-icon> {{ message }}
     </p>
   </div>
 </template>
@@ -29,6 +36,7 @@ export default {
   data() {
     return {
       drinkIngredient: "",
+      message: "Sorry, we couldn't find that. Please go back and try again",
       readMoreActivated: false
     };
   },

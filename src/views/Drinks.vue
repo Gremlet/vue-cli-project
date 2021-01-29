@@ -11,7 +11,7 @@
     <about-ings class="mb-5"></about-ings>
 
     <div class="search-form">
-      <b-form inline @submit="onSubmit">
+      <b-form inline class="justify-content-center" @submit="onSubmit">
         <label for="input-cocktail-name">Search for a cocktail: </label>
         <b-form-input
           id="input-cocktail-name"

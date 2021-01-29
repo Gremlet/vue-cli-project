@@ -6,7 +6,7 @@
     </p>
 
     <div class="search-form">
-      <b-form inline>
+      <b-form inline class="justify-content-center">
         <label for="input-ingredient-name">Search for an ingredient: </label>
         <b-form-input
           id="input-ingredient-name"
