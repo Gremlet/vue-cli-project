@@ -6,7 +6,7 @@
     <h1 class="text-center text-capitalize mt-5">
       {{ $route.params.ingredient }}
     </h1>
-    <p v-if="!readMoreActivated && drinkIngredient.length>0">
+    <p v-if="!readMoreActivated && drinkIngredient.length > 0">
       {{ drinkIngredient.slice(0, 500) }} ...
     </p>
     <b-button
