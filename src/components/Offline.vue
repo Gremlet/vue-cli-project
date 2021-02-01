@@ -10,7 +10,7 @@
       </template>
 
       <template v-slot:[offlineSlot] :slot-name="offlineSlot">
-         Online: {{ onLine }}
+        Online: {{ onLine }}
       </template>
     </v-offline>
   </div>
@@ -45,7 +45,7 @@ export default {
 @import "@/main.scss";
 
 .online-indicate {
-    width: 10%;
+  width: 10%;
 }
 
 .offline {
@@ -55,6 +55,5 @@ export default {
 .online {
   font-family: $roboto;
   background-color: #31bd56;
-  
 }
 </style>
