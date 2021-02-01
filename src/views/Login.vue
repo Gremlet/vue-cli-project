@@ -7,13 +7,13 @@
           id="input-1"
           size="sm"
           v-model="username"
-          placeholder="Let's pretend you have an account :)"
+          placeholder="Let's pretend this is a login page :)"
           required
         ></b-form-input>
       </b-form-group>
       <b-button type="submit" variant="info">Submit</b-button>
     </b-form>
-    <p v-if="yourName">Hello, {{ yourName.username }}! Enjoy your stay!</p>
+    <p v-if="yourName">Hello, {{ yourName }}! Enjoy your stay!</p>
   </div>
 </template>
 
@@ -44,8 +44,14 @@ export default {
     },
 
     handleLogin() {
-      this.yourName = this.$store.state;
-      console.log(this.yourName.username);
+      this.yourName = this.$store.state.username;
+    }
+  },
+  watch: {
+    yourName: function(newName, oldName) {
+      console.log(
+        `I didn't know where else to put a watcher. In any case, yourName has changed from ${oldName} to ${newName}`
+      );
     }
   }
 };

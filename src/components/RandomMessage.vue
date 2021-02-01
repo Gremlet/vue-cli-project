@@ -9,7 +9,15 @@ export default {
   name: "RandomMessage",
 
   data() {
-    return {};
+    return {
+      aNewMessage: ""
+    };
+  },
+
+  created() {
+    this.aNewMessage =
+      "A random message from another component! And ten random drinks!";
+    this.$emit("message-added", this.aNewMessage);
   },
 
   props: {

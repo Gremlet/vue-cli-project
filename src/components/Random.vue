@@ -2,7 +2,10 @@
   <div class="cards-wrapper">
     <b-button variant="info" @click="onClick">Randomise!</b-button>
 
-    <random-message :message="toggleMessage"></random-message>
+    <random-message
+      :message="toggleMessage"
+      @message-added="onMessageAdded"
+    ></random-message>
 
     <b-container>
       <b-row>
@@ -33,7 +36,8 @@ export default {
   data() {
     return {
       message: [],
-      drinks: null
+      drinks: null,
+      newMessage: null
     };
   },
 
@@ -53,6 +57,7 @@ export default {
         "Is it Friday yet? Ten drinks for you",
         "Cheers! Ten random cocktails"
       ];
+      this.message.push(this.newMessage);
       this.fetchDrink();
     },
     async fetchDrink() {
@@ -62,6 +67,10 @@ export default {
       let data = result.data.drinks;
       console.log(data);
       this.drinks = data;
+    },
+    onMessageAdded(aNewMessage) {
+      console.log(aNewMessage);
+      this.newMessage = aNewMessage;
     }
   }
 };
