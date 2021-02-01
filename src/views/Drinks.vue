@@ -36,7 +36,6 @@
                 img-top
                 class="mb-2 mt-2 mr-5"
               >
-                <!-- <b-card-text>{{ drink.strInstructions }}</b-card-text> -->
               </b-card>
             </b-col>
           </b-row>
@@ -59,7 +58,9 @@ import axios from "axios";
 import AboutIngs from "@/components/AboutIngs.vue";
 
 export default {
-  components: { AboutIngs },
+  components: {
+    AboutIngs
+  },
   name: "Drinks",
 
   data() {
@@ -81,6 +82,7 @@ export default {
       event.preventDefault();
       this.fetchDrink();
     },
+
     async fetchDrink() {
       let result = await axios.get(
         `https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=${this.searchTerm}`

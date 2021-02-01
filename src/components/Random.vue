@@ -1,7 +1,9 @@
 <template>
   <div class="cards-wrapper">
     <b-button variant="info" @click="onClick">Randomise!</b-button>
-    <h1 class="mt-5">{{ toggleMessage }}</h1>
+
+    <random-message :message="toggleMessage"></random-message>
+
     <b-container>
       <b-row>
         <b-col sm v-for="drink in drinks" :key="drink.strDrink">
@@ -11,7 +13,6 @@
             img-top
             class="mb-5 mt-5 mr-5"
           >
-            <!-- <b-card-text>{{ drink.strInstructions }}</b-card-text> -->
           </b-card>
         </b-col>
       </b-row>
@@ -21,8 +22,13 @@
 
 <script>
 import axios from "axios";
+import RandomMessage from "@/components/RandomMessage.vue";
 export default {
   name: "Random",
+
+  components: {
+    RandomMessage
+  },
 
   data() {
     return {
