@@ -18,14 +18,20 @@
       </b-collapse>
     </b-navbar>
     <p><b-icon icon="person-circle"></b-icon> {{ $store.state.username }}</p>
+    <offline></offline>
 
     <router-view />
   </div>
 </template>
 
 <script>
+import Offline from "./components/Offline.vue";
 export default {
-  name: "App"
+  name: "App",
+
+  components: {
+    Offline
+  }
 };
 </script>
 
