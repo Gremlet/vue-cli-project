@@ -17,12 +17,9 @@
         </b-row>
       </b-container>
       <div class="welcome-text mt-5">
-        <!-- personalise? I don't fucking know -->
         <p class="text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum esse
-          sapiente ut? Impedit similique consequuntur ea? Similique commodi
-          ullam aliquid non consequuntur magni, laudantium deleniti architecto
-          tenetur odit, quae numquam?
+          Welcome to The Cocktail App! Navigate using the dropdown menu above or
+          hit the "Randomise" button to get some cocktail inspiration!
         </p>
       </div>
     </div>

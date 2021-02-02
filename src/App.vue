@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <b-navbar toggleable variant="info">
-      <b-navbar-brand class="header">The Cocktail App</b-navbar-brand>
+      <b-navbar-brand to="/" class="header">The Cocktail App</b-navbar-brand>
       <b-navbar-toggle target="navbar-toggle-collapse">
         <template #default="{ expanded }">
           <b-icon v-if="expanded" icon="x"></b-icon>

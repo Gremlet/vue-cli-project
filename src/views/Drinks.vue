@@ -5,7 +5,7 @@
       Looking to kick off the weekend? Having a party with friends? Or maybe you
       just want to curl up with a good book and a great drink. Whatever the
       situation, you'll find the perfect cocktail at The Cocktail App. Search by
-      cocktail name, or look up some random cocktails on the
+      cocktail name (or part of a name) or look up some random cocktails on the
       <b-link to="/">home</b-link> page.
     </p>
     <about-ings class="mb-5"></about-ings>
@@ -16,6 +16,7 @@
         <b-form-input
           id="input-cocktail-name"
           v-model="searchTerm"
+          placeholder='e.g. "margarita" or "martini" or "es"'
           class="mx-2 w-50"
         ></b-form-input>
         <b-button type="submit" variant="info">Search</b-button>

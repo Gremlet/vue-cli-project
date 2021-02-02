@@ -10,6 +10,7 @@
         <label for="input-ingredient-name">Search for an ingredient: </label>
         <b-form-input
           id="input-ingredient-name"
+          placeholder='e.g "rum", "vodka", "water", "orange"'
           v-model="searchIngredient"
           class="mx-2 w-50"
         ></b-form-input>
