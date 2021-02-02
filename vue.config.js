@@ -1,4 +1,11 @@
 module.exports = {
+  pwa: {
+    manifestOptions: {
+      background_color: "#ffe26e"
+    },
+    name: "The Cocktail App",
+    themeColor: "#b767f5"
+  },
   chainWebpack: config => {
     config.module
       .rule("vue")

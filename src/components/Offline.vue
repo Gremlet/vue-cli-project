@@ -45,7 +45,7 @@ export default {
 @import "@/main.scss";
 
 .online-indicate {
-  width: 10%;
+  width: 12%;
 }
 
 .offline {
