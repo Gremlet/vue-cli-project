@@ -4,7 +4,33 @@ module.exports = {
       background_color: "#ffe26e"
     },
     name: "The Cocktail App",
-    themeColor: "#b767f5"
+    themeColor: "#b767f5",
+    workboxOptions: {
+      runtimeCaching: [
+        {
+          handler: "NetworkFirst",
+          options: {
+            networkTimeoutSeconds: 5
+          },
+          urlPattern:
+            "https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php"
+        },
+        {
+          handler: "NetworkFirst",
+          options: {
+            networkTimeoutSeconds: 5
+          },
+          urlPattern: /^https:\/\/www\.thecocktaildb\.com\/api\/json\/v1\/v1\/search\.php\?i=.*$/
+        },
+        {
+          handler: "NetworkFirst",
+          options: {
+            networkTimeoutSeconds: 5
+          },
+          urlPattern: /^https:\/\/www\.thecocktaildb\.com\/api\/json\/v2\/9973533\/search\.php\?s=.*$/
+        }
+      ]
+    }
   },
   chainWebpack: config => {
     config.module
